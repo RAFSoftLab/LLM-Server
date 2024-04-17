@@ -32,3 +32,8 @@ Locally hosted OS LLM models
       containrrr/watchtower
      ```
  - `./scripts/install.sh` to set up the server with no fuss.
+## Pulling new models
+ - From WebUI, go to settings and paste any model name found on https://ollama.com/library.
+  ![img.png](documentation/img.png)
+ - From commandline: run `docker exec -it ollama ollama pull <model_name>` or just run model:
+   - `docker exec -it ollama ollama run <model_name>`
