@@ -1,7 +1,7 @@
 # LLM-Server
 Locally hosted OS LLM models
 ## Endpoints
- - API: http://192.168.124.12:11434/api/generate
+ - **API**: http://192.168.124.12:11434/api/generate
    - Example: 
        ```
          curl http://192.168.124.12:11434/api/generate -d '{
@@ -10,7 +10,8 @@ Locally hosted OS LLM models
          "stream": false
          }'
        ```
- - UI: http://192.168.124.12:3000
+   - Additional API Documentation https://github.com/ollama/ollama/blob/main/docs/api.md
+ - **UI**: http://192.168.124.12:3000
   ![screenshot](documentation/screenshot.png)
 
 ## Server setup & specifications
@@ -20,13 +21,14 @@ Locally hosted OS LLM models
  - **Ollama Docker** https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image
    - GPU mode `docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama`
    - CPU mode `docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama`
-   - Run a model like llama2 `docker exec -it ollama ollama run llama2`
- - Open WebUI https://github.com/open-webui/open-webui
+   - Run a model like llama2 (optionally) `docker exec -it ollama ollama run llama2`
+ - **Open WebUI** https://github.com/open-webui/open-webui
    - `docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main`
-   - Watchtower to keep docker up to date https://containrrr.dev/watchtower/
-     - ```
-       docker run -d \
-        --name watchtower \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        containrrr/watchtower
-       ```
+ - **Watchtower** to keep docker up to date https://containrrr.dev/watchtower/
+   - ```
+     docker run -d \
+      --name watchtower \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      containrrr/watchtower
+     ```
+ - `./scripts/install.sh` to set up the server with no fuss.
