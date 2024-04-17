@@ -1,14 +1,14 @@
 # LLM-Server
 Locally hosted OS LLM models
 ## Endpoints
- - **API**: http://192.168.124.12:11434/api/generate
+ - **API**: POST to http://192.168.124.12:11434/api/generate
    - Example: 
        ```
          curl http://192.168.124.12:11434/api/generate -d '{
-         "model": "llama2",
-         "prompt": "Why is the sky blue?",
-         "stream": false
-         }'
+             "model": "llama2",
+             "prompt": "Why is the sky blue?",
+             "stream": false
+             }'
        ```
    - Additional API Documentation https://github.com/ollama/ollama/blob/main/docs/api.md
  - **UI**: http://192.168.124.12:3000
